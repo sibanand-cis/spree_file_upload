@@ -1,0 +1,24 @@
+<%= button_link_to 'New File upload', new_admin_file_upload_path %>
+<h1>Listing file_uploads</h1>
+
+<table>
+  <tr>
+    <th>File name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @file_uploads.each do |file_upload| %>
+  <tr>
+    <td><%= file_upload.file_name %></td>
+    <td><%= link_to 'Show', admin_file_upload_path(file_upload) %></td>
+    <td><%= link_to 'Edit', edit_admin_file_upload_path(file_upload) %></td>
+    <td><%= link_to 'Destroy', admin_file_upload_path(file_upload), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+

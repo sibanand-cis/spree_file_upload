@@ -1,0 +1,24 @@
+<%= semantic_form_for([:admin,@file_upload],:html => { :multipart => true }) do |f| %>
+  <% if @file_upload.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@file_upload.errors.count, "error") %> prohibited this file_upload from being saved:</h2>
+
+      <ul>
+      <% @file_upload.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <div class="field">
+    <%= f.label :file_name %><br />
+    <%= f.text_field :file_name %>
+  </div>
+  <div class="field">
+    <%= f.label :attachment %><br />
+    <%= f.file_field :attachment %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

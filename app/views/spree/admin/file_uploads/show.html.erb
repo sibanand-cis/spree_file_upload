@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <b>File Name</b><br/>
+  <%= @file_upload.file_name %>
+</p>
+<p>
+  <b>Image</b><br/>
+  <%= image_tag  @file_upload.attachment.url(:medium) %>
+</p>
+<p>
+  <b>Image URL</b><br/>
+  <%= "#{Rails.root}/public#{@file_upload.attachment.url}" %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_file_upload_path(@file_upload) %> |
+<%= link_to 'Back', admin_file_uploads_path %>
+
