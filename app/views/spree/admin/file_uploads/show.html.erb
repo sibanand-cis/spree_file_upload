@@ -1,14 +1,18 @@
 <p id="notice"><%= notice %></p>
 <p>
-  <b>File Name</b><br/>
+  <b>FILE NAME</b><br/>
   <%= @file_upload.file_name %>
 </p>
 <p>
-  <b>Image</b><br/>
+  <b>IMAGE</b><br/>
   <%= image_tag  @file_upload.attachment.url(:medium) %>
 </p>
 <p>
-  <b>Image URL</b><br/>
+  <b>FILE/IMAGE URL</b><br/>
+  <%= @file_upload.attachment.url %>
+</p>
+<p>
+  <b>FULL PATH TO FILE/IMAGE</b><br/>
   <%= "#{Rails.root}/public#{@file_upload.attachment.url}" %>
 </p>
 
